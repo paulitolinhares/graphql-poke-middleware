@@ -1,0 +1,8 @@
+{
+  "name": "graphql-poke-middleware",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:paulitolinhares/graphql-poke-middleware.git",
+  "author": "Paulo Linhares <paulitolinhares@gmail.com>",
+  "license": "MIT"
+}
