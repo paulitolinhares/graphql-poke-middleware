@@ -31,7 +31,7 @@ type PokemonStat {
 
 type PokemonMove {
   name: String!
-  accuracy: Int!
-  power: Int!
-  powerPoints: Int!
+  accuracy: Int
+  power: Int
+  powerPoints: Int
 }
