@@ -6,6 +6,8 @@ type Query {
 type Pokemon {
   id: ID!
   name: String!
-  weight: Int
-  height: Int
+  weight: Int!
+  height: Int!
+  imageThumb: String!
+  imageFull: String!
 }
