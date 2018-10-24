@@ -10,4 +10,28 @@ type Pokemon {
   height: Int!
   imageThumb: String!
   imageFull: String!
+  types: [PokemonType!]!
+  abilities: [PokemonAbility!]!
+  stats: [PokemonStat!]!
+  moves: [PokemonMove!]!
+}
+
+type PokemonType {
+  name: String!
+}
+
+type PokemonAbility {
+  name: String!
+}
+
+type PokemonStat {
+  name: String!
+  scale: Int!
+}
+
+type PokemonMove {
+  name: String!
+  accuracy: Int!
+  power: Int!
+  powerPoints: Int!
 }

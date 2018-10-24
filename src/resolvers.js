@@ -16,7 +16,7 @@ const resolvers = {
       const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
       const { results } = await response.json();
       const olderPokemonUrls = results
-        .slice(0, 151)
+        .slice(0, 1) // loads only the real pokemon :P
         .map(item => item.url);
 
       const data = await pokemonLoader.loadMany(olderPokemonUrls);
@@ -29,6 +29,9 @@ const resolvers = {
     },
     imageThumb: ({ id }) => {
       return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${id.toString().padStart(3,'0')}.png`
+    },
+    types: ({ types }) => {
+      return types.map(({ type: { name } }) => ({ name }));
     }
   }
 };
