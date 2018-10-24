@@ -4,5 +4,8 @@
   "main": "index.js",
   "repository": "git@github.com:paulitolinhares/graphql-poke-middleware.git",
   "author": "Paulo Linhares <paulitolinhares@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "graphql-yoga": "^1.16.7"
+  }
 }
