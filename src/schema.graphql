@@ -1,6 +1,7 @@
 type Query {
   info: String!
-  list: [Pokemon]!
+  list(page: Int, offset: Int): [Pokemon]!
+  find(id: Int!): Pokemon
 }
 
 type Pokemon {

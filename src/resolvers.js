@@ -20,15 +20,20 @@ const pokemonMoveLoader = new DataLoader(async keys => {
 const resolvers = {
   Query: {
     info: () => 'This is the PokeAPI Graphql wrapper',
-    list: async () => {
+    list: async (root, { page = 0, offset = 20 }) => {
       const response = await fetch('https://pokeapi.co/api/v2/pokemon/');
       const { results } = await response.json();
+      const offsetStart = page * offset;
+      const offsetEnd = offsetStart + offset;
       const olderPokemonUrls = results
-        .slice(0, 151) // loads only the real pokemon :P
+        .slice(offsetStart, offsetEnd) // loads only the real pokemon :P
         .map(item => item.url);
 
       const data = await pokemonLoader.loadMany(olderPokemonUrls);
       return data;
+    },
+    find: async (root, { id }) => {
+      return await pokemonLoader.load(`https://pokeapi.co/api/v2/pokemon/${id}`)
     }
   },
   Pokemon: {
